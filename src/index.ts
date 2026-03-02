@@ -11,7 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Routes
+import subscriptionRoutes from './routes/subscriptionRoutes';
+import usageRoutes from './routes/usageRoutes';
+
 app.use('/auth', authRoutes);
+app.use('/subscription', subscriptionRoutes);
+app.use('/usage', usageRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
